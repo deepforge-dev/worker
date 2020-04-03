@@ -16,7 +16,7 @@ program
     .version(version)
     .option('-t, --accessToken <token>', 'Access token for an authorized user')
     .option('-c, --cache <path>', 'Path to worker cache directory', 'worker-cache')
-    .option('-h, --host <url>', 'URL of DeepForge instance', 'https://dev.deepforge.org')  // TODO: set to editor
+    .option('-h, --host <url>', 'URL of DeepForge instance', 'https://editor.deepforge.org')
     .action(async cmd => {
         const {accessToken, cache, host} = cmd;
         process.env.DEEPFORGE_WORKER_CACHE = cache;
