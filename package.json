@@ -27,6 +27,6 @@
     "requirejs": "^2.3.5",
     "rimraf": "^2.7.1",
     "superagent": "^3.8.3",
-    "webgme-executor-worker": "git+https://github.com/webgme/executor-worker.git"
+    "webgme-executor-worker": "^3.1.0"
   }
 }
