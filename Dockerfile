@@ -14,14 +14,12 @@ ADD . /deepforge-worker
 
 WORKDIR /tmp
 
-RUN curl -O  https://repo.continuum.io/miniconda/$MINICONDA && bash $MINICONDA -b && rm -f $MINICONDA
+RUN cd /tmp && curl -O  https://repo.continuum.io/miniconda/$MINICONDA && \
+    bash $MINICONDA -b && rm -f $MINICONDA && \
+    export PATH=/root/miniconda3/bin:$PATH && conda update conda -yq && \
+    cd /deepforge-worker && npm config set unsafe-perm true && npm install
 
-ENV PATH /root/miniconda3/bin:$PATH
 ENV NODE_ENV production
-
 WORKDIR /deepforge-worker
-
-RUN conda update conda -yq
-RUN npm config set unsafe-perm true && npm install
 
 ENTRYPOINT ["node", "index.js"]
