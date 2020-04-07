@@ -1,12 +1,13 @@
-name: Publish latest deepforge/worker image
+name: Build and push latest deepforge/worker image
 
 on:
   push:
     branches:
       - master
+      - 5-publish-docker-image
 
 jobs:
-  publish:
+  push:
     runs-on: ubuntu-latest
 
     steps:
