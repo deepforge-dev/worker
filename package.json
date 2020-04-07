@@ -18,15 +18,7 @@
   },
   "homepage": "https://github.com/deepforge-dev/worker#readme",
   "dependencies": {
-    "@babel/runtime": "^7.9.2",
-    "agentkeepalive": "^3.4.1",
-    "aws-sdk": "^2.624.0",
     "commander": "^5.0.0",
-    "node-fetch": "^2.6.0",
-    "q": "^1.5.1",
-    "requirejs": "^2.3.5",
-    "rimraf": "^2.7.1",
-    "superagent": "^3.8.3",
-    "webgme-executor-worker": "^3.1.0"
+    "webgme-executor-worker": "git+https://github.com/webgme/executor-worker.git"
   }
 }
