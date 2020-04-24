@@ -10,11 +10,13 @@ SHELL ["/bin/bash", "-c"]
 
 ENV MINICONDA Miniconda3-latest-Linux-x86_64.sh
 
+ENV PATH /root/miniconda3/bin:$PATH
+
 ADD . /deepforge-worker
 
 WORKDIR /tmp
 
-RUN cd /tmp && curl -O  https://repo.continuum.io/miniconda/$MINICONDA && \
+RUN cd /tmp && curl -O  https://repo.anaconda.com/miniconda/$MINICONDA && \
     bash $MINICONDA -b && rm -f $MINICONDA && \
     export PATH=/root/miniconda3/bin:$PATH && conda update conda -yq && \
     cd /deepforge-worker && npm config set unsafe-perm true && npm install
